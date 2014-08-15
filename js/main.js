@@ -112,6 +112,7 @@ function translateSentences(sentences) {
     sen = sen.replace(/ [Vv]odě /, " rumu ");
 
     sen = sen.replace(/ [Vv]odní /, " rumový ");
+    sen = sen.replace(/ [Vv]odu /, " rum ");
     sen = sen.replace(/ [Vv]odního /, " rumovýho ");
     sen = sen.replace(/ [Vv]odním /, " rumovým ");
     sen = sen.replace(/ [Vv]odních /, " rumových ");
