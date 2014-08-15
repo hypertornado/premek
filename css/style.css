@@ -36,7 +36,7 @@
 
 textarea, #translated {
     width: calc(50% - 35px);
-    height: 130px;
+    height: 260px;
     padding: 5px;
     font-size: 20px;
 }
