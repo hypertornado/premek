@@ -39,6 +39,7 @@ textarea, #translated {
     height: 260px;
     padding: 5px;
     font-size: 20px;
+    height: calc(100% - 182px);
 }
 
 textarea {
@@ -52,3 +53,35 @@ textarea:focus {
     outline:none;
     box-shadow: none;
 }
+
+.b {
+    height: 27px;
+    border: 1px solid rgba(0, 0, 0, 0.0980392);
+    font-size: 11px;
+    font-weight: bold;
+    background: #f5f5f5 !important;
+    border-radius: 2px;
+}
+
+.prem, .ces {
+    width: calc(50% - 35px);
+    padding-bottom: 10px;
+}
+
+.ces {
+    margin-left: 30px;
+}
+
+.prem {
+    float: right;
+    margin-right: 30px;
+}
+
+body {
+    position: absolute;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+}
+
