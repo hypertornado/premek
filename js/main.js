@@ -3,7 +3,7 @@
 function bindEvents() {
   $("textarea")[0].focus();
 
-  $("textarea").val("Spor o rekordní odškodnění kvůli jarnímu chybám při porodu ve vinohradské fakultní nemocnici po pěti letech spěje ke konci. Nemocnice a rodina těžce postiženého Vojty podepsaly mimosoudní dohodu, jež chlapci přiznává odškodnění ve výši zhruba 20 milionů korun. Původně jim prvoinstanční soud přiznal víc než 30 milionů. Vázlerovi vezmou zpět žaloby, kterými se odškodnění domáhali.");
+  //$("textarea").val("Spor o rekordní odškodnění kvůli jarnímu chybám při porodu ve vinohradské fakultní nemocnici po pěti letech spěje ke konci. Nemocnice a rodina těžce postiženého Vojty podepsaly mimosoudní dohodu, jež chlapci přiznává odškodnění ve výši zhruba 20 milionů korun. Původně jim prvoinstanční soud přiznal víc než 30 milionů. Vázlerovi vezmou zpět žaloby, kterými se odškodnění domáhali.");
 
   $("textarea").on("keydown", handleChange);
   $("textarea").on("keyup", handleChange);
@@ -80,7 +80,9 @@ function randomSentence() {
 function translateSentences(sentences) {
   var ret = [];
 
-  ret.push("Papka Méra!\n");
+  if (sentences.length > 3) {
+    ret.push("Papka Méra!\n");
+  }
 
   sentences.forEach(function(sen) {
 
@@ -105,7 +107,9 @@ function translateSentences(sentences) {
     ret.push(sen);
   }, this);
 
-  ret.push("\nDuhy a jednorožci!");
+  if (sentences.length > 3) {
+    ret.push("\nDuhy a jednorožci!");
+  }
 
   return ret;
 
