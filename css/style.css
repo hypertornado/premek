@@ -1,0 +1,47 @@
+
+
+.logo {
+    padding: 10px 20px;
+    background: #f1f1f1;
+}
+
+.logo .l {
+    height: 40px;
+}
+
+.logo .avatar {
+    float: right;
+    height: 40px;
+    margin-right: 10px;
+    border-radius: 10000px;
+}
+
+
+.claim {
+    padding: 10px 30px;
+    color: #dd4b39;
+    font-size: 20px;
+    border-bottom: 1px solid #f1f1f1;
+    margin-bottom: 10px;
+}
+
+#translated {
+    background: #f1f1f1;
+    height: 130px;
+    width: calc(50% - 35px);
+    float: right;
+    margin-right: 30px;  
+}
+
+
+textarea {
+  width: calc(50% - 35px);
+  height: 130px;
+  margin-left: 30px;
+  border: 1px solid silver;
+  resize: none;
+}
+
+textarea:active {
+    border: 1px solid red;
+}
