@@ -34,6 +34,9 @@ function translate(text) {
 
   var changed = text + " ";
 
+
+  changed = changed.replace(/“/g, " “");
+  changed = changed.replace(/\"/g, " \"");
   changed = changed.replace(/,/g, " ,");
   changed = changed.replace(/\./g, " .");
   changed = changed.replace(/\?/g, " ?");
@@ -54,6 +57,9 @@ function translate(text) {
   ret = ret.replace(/ \?/g, "?");
   ret = ret.replace(/ \./g, ".");
   ret = ret.replace(/ \,/g, ",");
+
+  ret = ret.replace(/ “/g, "“");
+  ret = ret.replace(/ \"/g, "\"");
 
 
   return ret;
@@ -77,7 +83,9 @@ function randomSentence() {
     "Bohuželky.",
     "Džízis.",
     "Made my day.",
-    "Zmikundi."
+    "Zmikundi.",
+    "Hradec Králové!",
+    "Whatever."
   ];
 
   var rand = Math.floor(Math.random() * random.length);
@@ -117,6 +125,26 @@ function translateSentences(sentences) {
     sen = sen.replace(/ [Vv]odním /, " rumovým ");
     sen = sen.replace(/ [Vv]odních /, " rumových ");
 
+    sen = sen.replace(/ [Ss]kvěl(ý|á|é|ých|ého|éme|ém|ým|ou|e) /, " epic ");
+    sen = sen.replace(/ [Hh]ezk(ý|á|é|ých|ého|éme|ém|ým|ou) /, " epic ");
+    sen = sen.replace(/ [Pp]ěkn(ý|á|é|ých|ého|éme|ém|ým|ou|ě) /, " epic ");
+    sen = sen.replace(/ [Dd]obr(ý|á|é|ých|ého|éme|ém|ým|ou) /, " epic ");
+    sen = sen.replace(/ [Zz]ábavn(ý|á|é|ých|ého|éme|ém|ým|ou|ě) /, " epic ");
+    sen = sen.replace(/ [Pp]oveden(ý|á|é|ých|ého|éme|ém|ým|ou) /, " epic ");
+    sen = sen.replace(/ [Vv]inikající /, " epic ");
+    sen = sen.replace(/ [Vv]ýborn(ý|á|é|ých|ého|éme|ém|ým|ou|ě) /, " epic ");
+
+    sen = sen.replace(/ [Dd]obře /, " epic ");
+
+    sen = sen.replace(/ [Ss]tar(ý|á|é) /, " so 2003 ");
+
+
+    sen = sen.replace(/ [Hh]rozn(ý|á|é|ých|ého|éme|ém|ým|ou|ě) /, " peklo ");
+    sen = sen.replace(/ [Šš]patn(ý|á|é|ých|ého|éme|ém|ým|ou|ě) /, " peklo ");
+    sen = sen.replace(/ [Pp]říšern(ý|á|é|ých|ého|éme|ém|ým|ou|ě) /, " peklo ");
+    sen = sen.replace(/ [Hh]nusn(ý|á|é|ých|ého|éme|ém|ým|ou|ě) /, " peklo ");
+    sen = sen.replace(/ [Zz]l(ý|á|é|ých|ého|éme|ém|ým|ou|e) /, " peklo ");
+
     sen = sen.replace(/ [A|a]ndroid /, " iPhone ");
     sen = sen.replace(/ [A|a]ndroidu /, " iPhonu ");
     sen = sen.replace(/ [A|a]ndroidem /, " iPhonem ");
@@ -129,11 +157,20 @@ function translateSentences(sentences) {
     sen = sen.replace(/ [Mm]ikrotužce /, " pentilce ");
     sen = sen.replace(/ [Mm]ikrotužku /, " pentilku ");
 
+    sen = sen.replace(/ bohužel /, " bohuželky ");
+    sen = sen.replace(/ Bohužel /, " Bohuželky ");
+
     sen = sen.replace(/ [Pp]aní [^ ]+ová /g, " Paní Semerádová ");
     sen = sen.replace(/ [Pp]aní [^ ]+ové /g, " Paní Semerádové ");
     sen = sen.replace(/ [Pp]aní [^ ]+ovou /g, " Paní Semerádovou ");
 
-    pos = sen.search(/ [^ ]+(ší|é|ou|ými|ím|ího|ímu) /)
+
+    pos = sen.search(/ ale /)
+    if (pos >= 0) {
+      sen = sen + " Ale tvoje máma.";
+    }
+
+    pos = sen.search(/ [^ ]+(ší|ý|á|é|ou|ými|ím|ího|ímu) /)
     if (pos >= 0) {
       sen = insertStr(sen, pos, " nejvíc");
     }
