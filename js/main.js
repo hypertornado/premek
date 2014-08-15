@@ -13,8 +13,16 @@ function bindEvents() {
 
 }
 
+window.lastText = "";
+
 function handleChange() {
   var text = $("textarea").val();
+
+  if (window.lastText == text) {
+    return;
+  }
+
+  window.lastText = text;
 
   text = translate(text);
 
@@ -98,15 +106,15 @@ function translateSentences(sentences) {
     }
 
 
-    sen = sen.replace(" voda ", " rum ");
-    sen = sen.replace(" vody ", " rumu ");
-    sen = sen.replace(" vodou ", " rumem ");
-    sen = sen.replace(" vodě ", " rumu ");
+    sen = sen.replace(/ [Vv]oda /, " rum ");
+    sen = sen.replace(/ [Vv]ody /, " rumu ");
+    sen = sen.replace(/ [Vv]odou /, " rumem ");
+    sen = sen.replace(/ [Vv]odě /, " rumu ");
 
-    sen = sen.replace(" vodní ", " rumový ");
-    sen = sen.replace(" vodního ", " rumovýho ");
-    sen = sen.replace(" vodním ", " rumovým ");
-    sen = sen.replace(" vodních ", " rumových ");
+    sen = sen.replace(/ [Vv]odní /, " rumový ");
+    sen = sen.replace(/ [Vv]odního /, " rumovýho ");
+    sen = sen.replace(/ [Vv]odním /, " rumovým ");
+    sen = sen.replace(/ [Vv]odních /, " rumových ");
 
     sen = sen.replace(/ [A|a]ndroid /, " iPhone ");
     sen = sen.replace(/ [A|a]ndroidu /, " iPhonu ");
@@ -114,11 +122,11 @@ function translateSentences(sentences) {
 
     sen = sen.replace(" Jav(a|y|ou|ový|ovský|ě) ", " Objective-C ");
 
-    sen = sen.replace(" mikrotužka ", " pentilka ");
-    sen = sen.replace(" mikrotužky ", " pentilky ");
-    sen = sen.replace(" mikrotužkou ", " pentilkou ");
-    sen = sen.replace(" mikrotužce ", " pentilce ");
-    sen = sen.replace(" mikrotužku ", " pentilku ");
+    sen = sen.replace(/ [Mm]ikrotužka /, " pentilka ");
+    sen = sen.replace(/ [Mm]ikrotužky /, " pentilky ");
+    sen = sen.replace(/ [Mm]ikrotužkou /, " pentilkou ");
+    sen = sen.replace(/ [Mm]ikrotužce /, " pentilce ");
+    sen = sen.replace(/ [Mm]ikrotužku /, " pentilku ");
 
     sen = sen.replace(/ [Pp]aní [^ ]+ová /g, " Paní Semerádová ");
     sen = sen.replace(/ [Pp]aní [^ ]+ové /g, " Paní Semerádové ");
