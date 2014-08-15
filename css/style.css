@@ -27,21 +27,28 @@
 
 #translated {
     background: #f1f1f1;
-    height: 130px;
-    width: calc(50% - 35px);
     float: right;
     margin-right: 30px;  
+    white-space: pre-wrap;
+    overflow: auto;
 }
 
 
+textarea, #translated {
+    width: calc(50% - 35px);
+    height: 130px;
+    padding: 5px;
+    font-size: 20px;
+}
+
 textarea {
-  width: calc(50% - 35px);
-  height: 130px;
   margin-left: 30px;
   border: 1px solid silver;
   resize: none;
 }
 
-textarea:active {
-    border: 1px solid red;
+textarea:focus {
+    border: 1px solid #156aeb;
+    outline:none;
+    box-shadow: none;
 }
